@@ -42,7 +42,7 @@ export default function Home() {
         //redirect to the dashboard or sign in page
       },
       onError: (ctx) => {
-        // display the error message
+        // display the  error message
         window.alert(ctx.error.message);
       },
     })
@@ -68,11 +68,11 @@ export default function Home() {
 
       <Input placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <Input
-  placeholder="Password"
-  type="password"
-  value={password}
-  onChange={(e) => setPassword(e.target.value)}
-/>
+        placeholder="Password"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
       <Button onClick={handleLogIn} variant={"custom"}>Log in</Button>
     </div>
   );
