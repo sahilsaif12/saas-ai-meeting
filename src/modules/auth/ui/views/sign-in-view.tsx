@@ -53,6 +53,21 @@ export const SignInView = () => {
         }
         setisloading(false);
     };
+
+    
+    const onSocial = async (provider: "github" | "google") => {
+        setisloading(true);
+        setError(null);
+        await authClient.signIn.social({
+            provider: provider,
+            callbackURL: "/"
+        }, {
+            onError: ({ error }) => {
+                setError(error.message);
+            }
+        });
+        setisloading(false);
+    };
     return (
         <div className="flex flex-col gap-6">
 
@@ -132,11 +147,11 @@ export const SignInView = () => {
                                     </span>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
-                                    <Button variant="outline" className="w-full" type="button">
+                                    <Button variant="outline" className="w-full cursor-pointer" type="button" onClick={() => onSocial("google")}>
                                         <img src="/google.svg" alt="google" className="w-4 h-4 mr-2" />
                                         Google
                                     </Button>
-                                    <Button variant="outline" className="w-full" type="button">
+                                    <Button variant="outline" className="w-full cursor-pointer" type="button" onClick={() => onSocial("github")}>
                                         <img src="/github.svg" alt="github" className="w-4 h-4 mr-2" />
                                         Github
                                     </Button>
