@@ -54,8 +54,8 @@ export const SignInView = () => {
         setisloading(false);
     };
 
-    
-    const onSocial = async (provider: "github" | "google") => {
+
+    const onSocial = async (provider: "github" | "google" | "linkedin") => {
         setisloading(true);
         setError(null);
         await authClient.signIn.social({
@@ -146,14 +146,15 @@ export const SignInView = () => {
                                         or continue with
                                     </span>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <Button variant="outline" className="w-full cursor-pointer" type="button" onClick={() => onSocial("google")}>
-                                        <img src="/google.svg" alt="google" className="w-4 h-4 mr-2" />
-                                        Google
+                                <div className="flex justify-center gap-4">
+                                    <Button variant="outline" className="w-10 h-10 bg-slate-200/60 p-0 hover:bg-amber-50 rounded-full flex justify-center items-center cursor-pointer" type="button" onClick={() => onSocial("google")}>
+                                        <img src="/google.svg" alt="google" className="w-4 h-4 " />
                                     </Button>
-                                    <Button variant="outline" className="w-full cursor-pointer" type="button" onClick={() => onSocial("github")}>
-                                        <img src="/github.svg" alt="github" className="w-4 h-4 mr-2" />
-                                        Github
+                                    <Button variant="outline" className="w-10 h-10 bg-slate-200/60 p-0 hover:bg-amber-50 rounded-full flex justify-center items-center cursor-pointer" type="button" onClick={() => onSocial("github")}>
+                                        <img src="/github.svg" alt="github" className="w-4 h-4 " />
+                                    </Button>
+                                    <Button variant="outline" className="w-10 h-10 bg-slate-200/60 p-0 hover:bg-amber-50 rounded-full flex justify-center items-center cursor-pointer" type="button" onClick={() => onSocial("linkedin")}>
+                                        <img src="/linkedin.svg" alt="linkedin" className="w-4 h-4" />
                                     </Button>
                                 </div>
                                 <div className="text-center text-sm">
