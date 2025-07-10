@@ -14,6 +14,7 @@ const page=async()=> {
     }
     
   return (
+    
     <Home />
   )
 }
