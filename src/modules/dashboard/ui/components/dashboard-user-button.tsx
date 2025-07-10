@@ -18,14 +18,14 @@ export const DashboardUserButton = () => {
     }
 
     if (isPending || !data?.user) return null
-
+    
     return (
 
         <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center justify-between rounded-lg border border-border/10 p-3 gap-3 w-full bg-white/5 hover:bg-white/10 ">
                 {data.user.image ? (
-                    <Avatar >
-                        <AvatarImage src={data.user.image} alt={data.user.name || "User Avatar"} />
+                    <Avatar className="size-12" >
+                        <AvatarImage src={data.user.image}  alt={data.user.name || "User Avatar"} />
                     </Avatar>
                 ) : <GeneratedAvatar seed={data.user.name} varient="initials" className="size-9 mr-3" />}
 
