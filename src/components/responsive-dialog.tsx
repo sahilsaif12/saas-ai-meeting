@@ -6,13 +6,13 @@ import { Dialog, DialogContent, DialogHeader,DialogDescription,DialogTitle } fro
 interface ResponsiveDialogProps {
     title:string;
     description:string;
-    childern:React.ReactNode;
+    children:React.ReactNode;
     open:boolean;
     onOpenChange:(open:boolean)=>void;
 
 }
 
-function ResponsiveDialog({title,description,childern,open,onOpenChange}:ResponsiveDialogProps) {
+function ResponsiveDialog({title,description,children,open,onOpenChange}:ResponsiveDialogProps) {
     const isMobile=useIsMobile()
 
     if(isMobile){
@@ -26,7 +26,7 @@ function ResponsiveDialog({title,description,childern,open,onOpenChange}:Respons
               {description}
             </DrawerDescription>
           </DrawerHeader>
-          {childern}
+          {children}
         </DrawerContent>
     </Drawer>
         )
@@ -42,7 +42,9 @@ function ResponsiveDialog({title,description,childern,open,onOpenChange}:Respons
               {description}
             </DialogDescription>
           </DialogHeader>
-          {childern}
+          <div className="p-4">
+          {children}
+          </div>
           {/* <DialogFooter>
             <DialogClose asChild>
               <Button variant="outline">Cancel</Button>
