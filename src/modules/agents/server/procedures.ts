@@ -7,7 +7,7 @@ import { eq } from "drizzle-orm";
 
 
 export const agentsRouter=createTRPCRouter({
-    getOne:baseProcedure.input(z.object({id:z.string()})).query(async({input})=>{
+    getOne:protectedProcedure.input(z.object({id:z.string()})).query(async({input})=>{
         const [existingAgent]=await db
         .select()
         .from(agent)
@@ -15,7 +15,7 @@ export const agentsRouter=createTRPCRouter({
 
         return existingAgent
     }),
-    getMany:baseProcedure.query(async()=>{
+    getMany:protectedProcedure.query(async()=>{
         const data=await db.select().from(agent)
         return data
     }),

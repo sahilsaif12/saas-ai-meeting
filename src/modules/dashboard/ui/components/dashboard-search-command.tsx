@@ -23,7 +23,6 @@ export const DashboardSearchCommand =({open,setOpen}:Props)=>{
                         Agent
                     </CommandItem>
                 </CommandList>
-https://qbwppn6t-3000.inc1.devtunnels.ms/
 
 
         </CommandDialog>
