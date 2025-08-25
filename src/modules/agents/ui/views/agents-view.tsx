@@ -5,6 +5,9 @@ import { LoadingState } from "@/components/loading-state"
 import ResponsiveDialog from "@/components/responsive-dialog"
 import { useTRPC } from "@/trpc/client"
 import { useSuspenseQuery } from "@tanstack/react-query"
+import { columns } from "../components/agentsTable/columns"
+import { DataTable } from "../components/agentsTable/agents-table"
+
 
 export const AgentsView = () => {
     const trpc = useTRPC()
@@ -12,7 +15,12 @@ export const AgentsView = () => {
 
     return (
         <>
-            {JSON.stringify(data, null, 2)}
+        <div className="flex flex-1 flex-col pb-4 px-4 gap-y-4 ">
+
+              <DataTable columns={columns} data={data} onRowClick={(row)=>console.log(row)} />
+        </div>
+
+            {/* {JSON.stringify(data, null, 2)} */}
             {/* <ResponsiveDialog
             open
             onOpenChange={() => { }}
