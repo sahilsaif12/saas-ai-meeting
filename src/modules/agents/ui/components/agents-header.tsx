@@ -12,8 +12,8 @@ export const AgentsHeader = () => {
         <>
             <NewAgentDialog open={open} onOpenChange={setopen} />
             <div className="p-4 md:px-8 flex items-center justify-between">
-                <h3 className="text-xl font-medium">My Agents</h3>
-                <Button onClick={() => setopen(true)} >
+                <h3 className="text-xl font-medium ">My Agents</h3>
+                <Button className="cursor-pointer" onClick={() => setopen(true)} >
                     <Plus />
                     New Agent
                 </Button>

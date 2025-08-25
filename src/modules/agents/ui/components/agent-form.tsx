@@ -98,7 +98,7 @@ export const AgentForm = ({ onSuccess, onCancel, initialValues }: AgentFormProps
                         >
                             Cancel
                         </Button>}
-                    <Button disabled={isPending} type="submit">
+                    <Button disabled={isPending} className="cursor-pointer" type="submit">
                         {isEdit ? 'Save Changes' : 'Create Agent'}
                     </Button>
                 </div>
